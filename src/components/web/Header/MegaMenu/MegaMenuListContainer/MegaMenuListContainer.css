@@ -1,0 +1,9 @@
+.mega-menu-list-container{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: flex-start;
+   align-items: center;
+   width: 100%;
+   gap: 10px;
+   padding-left: 30px;
+}

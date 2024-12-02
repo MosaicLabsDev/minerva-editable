@@ -1,0 +1,82 @@
+.mega-menu-container {
+   position: absolute;
+   top: calc(var(--headerHeight) - 20px);
+   right: 0;
+   max-height: calc(100vh - var(--headerHeight));
+   border-bottom-left-radius: var(--border-radius-sm);
+   border-bottom-right-radius: var(--border-radius-sm);
+   opacity: 0;
+   visibility: hidden;
+   box-shadow: var(--box-shadow);
+}
+
+.mega-menu-container::before {
+   position: absolute;
+   content: '';
+   z-index: 20;
+   right: 10%;
+   top: -16px;
+   height: 16px;
+   width: 16px;
+   -webkit-clip-path: polygon(76% 0, 0% 100%, 100% 100%);
+   clip-path: polygon(76% 0, 0% 100%, 100% 100%);
+   background-color: var(--color-primary-lightest);
+   box-shadow: 1px 8px 10px -4px var(--color-primary-lightest) inset;
+}
+
+.mega-menu-list {
+   width: 768px;
+   height: calc(450px + 40px);
+}
+
+.mega-menu--open {
+   opacity: 1;
+   visibility: visible;
+   transition: all .3s;
+}
+
+@media screen and (min-width: 930px) and (max-width: 1200px) {
+   .mega-menu-container{
+      right: -50%;
+   }
+   .mega-menu-container::before{
+      right:20%;
+   }
+}
+
+@media screen and (min-width: 769px) and (max-width: 929px) {
+   .mega-menu-container{
+      right: -135%;
+   }
+   .mega-menu-container::before{
+      right:33%;
+   }
+}
+
+@media screen and (max-width: 768px) {
+   .mega-menu-container {
+      position: static;
+      display: none;
+      top: unset;
+      right: unset;
+      max-height:max-content;
+      border-bottom-left-radius: unset;
+      border-bottom-right-radius: unset;
+      box-shadow: unset;
+      padding-left: 10px;
+   }
+   .mega-menu--open {
+      display: flex;
+      opacity: 1;
+      visibility: visible;
+      transition: all .3s;
+   }
+
+   .mega-menu-container::before {
+      display: none;
+   }
+
+   .mega-menu-list {
+      height: max-content;
+   }
+}

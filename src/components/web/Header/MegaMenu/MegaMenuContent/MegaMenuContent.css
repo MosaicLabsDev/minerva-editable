@@ -1,0 +1,31 @@
+.mega-menu-content-container {
+   height: 100%;
+   width: 100%;
+   overflow: hidden;
+   padding: 20px 0px 20px 20px;
+}
+
+.mega-menu-section-items {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+   align-items: center;
+   gap: 10px;
+}
+
+/* Cambiando estilos para cada tarjeta */
+.mega-menu-content-container .cardInfo-column {
+   position: absolute;
+   height: 75%;
+   bottom: 10%;
+   box-shadow: none;
+   padding: 0;
+}
+
+.mega-menu-content-container .cardInfo-column .cardInfo-description-container{
+   justify-content: flex-start;
+   gap: 0;
+}
+
+.mega-menu-content-container .cardInfo-column .cardInfo-image{
+   border-radius: var(--border-radius-sm);
+} 
